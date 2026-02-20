@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECKJEFF ASP Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>ECK-JEFF ASP CONVERTER</h1>
+    <p>Convert HTML/CSS/JS to VBScript <code>Response.Write</code> statements — and reverse it back.</p>
+
+    <div class="grid">
+
+        <!-- LEFT PANEL: JS → VB -->
+        <div class="panel">
+            <div class="panel-header">
+                <span class="panel-label">📄 Source Code <small>(HTML / CSS / JS)</small></span>
+                <button class="clear-btn" onclick="clearArea('inputCode')" title="Clear">&#x2715;</button>
+            </div>
+            <textarea id="inputCode" placeholder="Paste your HTML, CSS, or JS here..."></textarea>
+            <div class="panel-options">
+                <label><input type="checkbox" id="wrapStyle"> Wrap in &lt;style&gt;</label>
+                <label><input type="checkbox" id="wrapScript"> Wrap in &lt;script&gt;</label>
+            </div>
+            <div class="panel-actions">
+                <button class="btn-primary" onclick="convertToVB()">Convert to VBScript &#8594;</button>
+                <button class="btn-secondary" onclick="copyArea('inputCode')">Copy</button>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: VB → JS -->
+        <div class="panel">
+            <div class="panel-header">
+                <span class="panel-label">📝 VBScript <small>(Response.Write)</small></span>
+                <button class="clear-btn" onclick="clearArea('outputCode')" title="Clear">&#x2715;</button>
+            </div>
+            <textarea id="outputCode" placeholder="Paste VBScript Response.Write lines here, or convert from the left..."></textarea>
+            <div class="panel-options">
+                <!-- Placeholder to balance layout -->
+            </div>
+            <div class="panel-actions">
+                <button class="btn-vb" onclick="convertToJS()">&#8592; Convert to JS/HTML</button>
+                <button class="btn-secondary" onclick="copyArea('outputCode')">Copy</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
